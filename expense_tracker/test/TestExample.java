@@ -5,9 +5,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
-import java.text.ParseException;
 
 import javax.swing.table.TableModel;
 
