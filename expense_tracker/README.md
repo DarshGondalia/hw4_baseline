@@ -21,3 +21,18 @@ This code is compiled with ```openjdk 17.0.7 2023-04-18```. Please update your J
 * Add a new transaction: First specify the amount and category. Then click on the Add transaction button. Adds the new transaction to the list and updates the total cost.
 * Filter the transaction list by either amount or category: First specify the amount or category to be matched. Then click the corresponding Filter button. Highlights the matching transactions in the list.
 * Undo an existing transaction: First select an existing transaction from the list. Then click the Undo button. Removes the selected transaction from the list and updates the total cost.
+
+## Updates
+### Observer Design Pattern
+ExpenseTrackerController.java
+- Created update method: to keep observer (ExpenseTrackerController) updated with the model
+- Applied observer design pattern
+
+ExpenseTrackerModel.java
+- functionality to register multiple listeners
+    - register
+    - numberOfListeners
+    - containsListener( Listener )
+- update all listeners
+    - stateChanged
+    - Necessary updates to removeTransaction and addTransaction methods

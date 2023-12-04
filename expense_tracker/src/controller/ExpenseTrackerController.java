@@ -1,20 +1,21 @@
 package controller;
 
-import view.ExpenseTrackerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import model.ExpenseTrackerModel;
+import model.ExpenseTrackerModelListener;
 import model.Transaction;
 import model.Filter.TransactionFilter;
+import view.ExpenseTrackerView;
 
-public class ExpenseTrackerController {
+public class ExpenseTrackerController implements ExpenseTrackerModelListener {
   
   private ExpenseTrackerModel model;
   private ExpenseTrackerView view;
+  
   /** 
    * The Controller is applying the Strategy design pattern.
    * This is the has-a relationship with the Strategy class 
@@ -83,5 +84,10 @@ public class ExpenseTrackerController {
 
     // The undo was disallowed.
     return false;
-  }    
+  }
+  public void update(ExpenseTrackerModel model) {
+    // This method is called by the model whenever there is a state change
+    // Update the view based on the changes in the model
+    view.update(model);
+  }
 }
